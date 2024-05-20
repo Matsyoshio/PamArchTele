@@ -57,30 +57,6 @@ snake snk[N]; // tamanho máximo
 fruit frt;
 
 int score = 0;
-
-void begin(int *size, char map[V][H]);
-void intro(char map[V][H]);
-void intro_data(char map[V][H], int *size);
-int loop(char map[V][H], int size);
-int input(char map[V][H], int *size, int *dead);
-void update(char map[V][H], int size);
-void intro_data2(char map[V][H], int size);
-
-void show(char map[V][H]);
-
-int main()
-{
-    int size;
-    char map[V][H];
-
-    begin(&size, map);
-    show(map);
-    usleep(2000000); // Aguarda 2 segundos (2 * 10^6 microssegundos) antes de iniciar o loop
-    loop(map, size);
-
-    return 0;
-}
-
 void begin(int *size, char map[V][H])
 {
     int i;
@@ -264,6 +240,30 @@ void gotoxy(int x, int y)
 {
     printf("\033[%d;%dH", y, x); // ANSI escape code para mover o cursor para a posição (x, y)
 }
+void begin(int *size, char map[V][H]);
+void intro(char map[V][H]);
+void intro_data(char map[V][H], int *size);
+int loop(char map[V][H], int size);
+int input(char map[V][H], int *size, int *dead);
+void update(char map[V][H], int size);
+void intro_data2(char map[V][H], int size);
+
+void show(char map[V][H]);
+
+int main()
+{
+    int size;
+    char map[V][H];
+
+    begin(&size, map);
+    show(map);
+    usleep(2000000); // Aguarda 2 segundos (2 * 10^6 microssegundos) antes de iniciar o loop
+    loop(map, size);
+
+    return 0;
+}
+
+
 
 
 }
