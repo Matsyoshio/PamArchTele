@@ -26,7 +26,7 @@
 #include <stdlib.h>
 #include <strings.h>
 #include <unistd.h>
-#include <conio.h>
+
 #define V 21
 #define H 75
 #define N 100
