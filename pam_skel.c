@@ -61,8 +61,8 @@ int score = 0;
 void begin(int *size, char map[V][H]);
 void intro(char map[V][H]);
 void intro_data(char map[V][H], int *size);
-void loop(char map[V][H], int size);
-void input(char map[V][H], int *size, int *dead);
+int loop(char map[V][H], int size);
+int input(char map[V][H], int *size, int *dead);
 void update(char map[V][H], int size);
 void intro_data2(char map[V][H], int size);
 
@@ -158,7 +158,7 @@ void intro_data(char map[V][H], int *size)
     map[frt.y][frt.x] = 'F'; // fruta
 }
 
-void loop(char map[V][H], int size)
+int loop(char map[V][H], int size)
 {
     int dead = 0;
 
@@ -176,7 +176,7 @@ void loop(char map[V][H], int size)
     }
 }
 
-void input(char map[V][H], int *size, int *dead)
+int input(char map[V][H], int *size, int *dead)
 {
     int i;
     char key;
