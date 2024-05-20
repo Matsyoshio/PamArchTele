@@ -240,15 +240,15 @@ void gotoxy(int x, int y)
 {
     printf("\033[%d;%dH", y, x); // ANSI escape code para mover o cursor para a posição (x, y)
 }
-void begin(int *size, char map[V][H]);
-void intro(char map[V][H]);
-void intro_data(char map[V][H], int *size);
-int loop(char map[V][H], int size);
-int input(char map[V][H], int *size, int *dead);
-void update(char map[V][H], int size);
-void intro_data2(char map[V][H], int size);
+begin(int *size, char map[V][H]);
+intro(char map[V][H]);
+intro_data(char map[V][H], int *size);
+loop(char map[V][H], int size);
+input(char map[V][H], int *size, int *dead);
+update(char map[V][H], int size);
+intro_data2(char map[V][H], int size);
 
-void show(char map[V][H]);
+show(char map[V][H]);
 
 int main()
 {
