@@ -209,13 +209,13 @@ int inputGame(char map[V][H], int *size, int *dead)
     }
 }
 
-void updateGame(char map[V][H], int size)
+updateGame(char map[V][H], int size)
 {
     intro(map);
     intro_data2(map, size);
 }
 
-void intro_data2Game(char map[V][H], int size)
+intro_data2Game(char map[V][H], int size)
 {
     int i;
 
@@ -236,7 +236,7 @@ void intro_data2Game(char map[V][H], int size)
     map[frt.y][frt.x] = 'F';
 }
 
-void gotoxyGame(int x, int y)
+gotoxyGame(int x, int y)
 {
     printf("\033[%d;%dH", y, x); // ANSI escape code para mover o cursor para a posição (x, y)
 }
@@ -262,7 +262,7 @@ int main()
 
     return 0;
 }
-void beginGame(int *size, char map[V][H])
+beginGame(int *size, char map[V][H])
 {
 	int i;
 	// snake head
@@ -289,7 +289,7 @@ void beginGame(int *size, char map[V][H])
 }
 
 // Show everything
-void showGame(char map[V][H])
+showGame(char map[V][H])
 {
 
 	int i, j;
@@ -307,7 +307,7 @@ void showGame(char map[V][H])
 }
 
 // The camp (map).
-void introGame(char map[V][H])
+introGame(char map[V][H])
 {
 	int i, j;
 
@@ -336,7 +336,7 @@ void introGame(char map[V][H])
 }
 
 // Introduce every data inIT
-void intro_dataGame(char map[V][H], int *size)
+intro_dataGame(char map[V][H], int *size)
 {
 
 	int i;
@@ -362,7 +362,7 @@ void intro_dataGame(char map[V][H], int *size)
 	map[frt.y][frt.x] = 'F'; // fruit
 }
 
-void loopGame(char map[V][H], int size)
+loopGame(char map[V][H], int size)
 {
 
 	int dead;
@@ -380,7 +380,7 @@ void loopGame(char map[V][H], int size)
 	} while (dead == 0);
 }
 
-void inputGame(char map[V][H], int *size, int *dead)
+inputGame(char map[V][H], int *size, int *dead)
 {
 	int i;
 	char key;
@@ -470,7 +470,7 @@ void inputGame(char map[V][H], int *size, int *dead)
 	}
 }
 
-void updateGame(char map[V][H], int size)
+updateGame(char map[V][H], int size)
 {
 
 	// Everytime this function is called, the map is overwriting
@@ -480,7 +480,7 @@ void updateGame(char map[V][H], int size)
 	intro_data2(map, size);
 }
 
-void intro_data2Game(char map[V][H], int size)
+intro_data2Game(char map[V][H], int size)
 {
 
 	int i;
