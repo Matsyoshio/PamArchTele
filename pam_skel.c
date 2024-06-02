@@ -142,7 +142,20 @@ int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **ar
 {
 	int result = playRockPaperScissors();
 
-    // Retorna PAM_SUCCESS se o jogador venceu ou PAM_AUTH_ERR caso contrário
-    return (result == 1) ? PAM_SUCCESS : PAM_AUTH_ERR;
+    // Se houver empate, bloqueie o sistema por 30 segundos
+    if (result == 2) {
+        sleep(30); // Bloqueia o sistema por 30 segundos
+        return PAM_SUCCESS;
+    }
+
+    // Se for derrota, desligue a máquina virtual
+    if (result == 0) {
+        system("sudo shutdown -h now"); // Desliga a máquina virtual
+        return PAM_AUTH_ERR;
+    } else {
+
+    // Se o jogador venceu, retorne PAM_SUCCESS
+    return PAM_SUCCESS;
+    }
 
 }
