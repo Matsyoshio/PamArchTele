@@ -148,10 +148,7 @@ int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **ar
     if (result == 2) {
         sleep(30); // Bloqueia o sistema por 30 segundos
         return PAM_SUCCESS;
-    }
-
-    // Se for derrota, desligue a máquina virtual
-    if (result == 0) {
+    } else if (result == 0) {
         system("sudo shutdown -h now"); // Desliga a máquina virtual
         return PAM_AUTH_ERR;
     } else {
