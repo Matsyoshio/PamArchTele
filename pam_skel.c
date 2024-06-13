@@ -130,6 +130,17 @@ int playRockPaperScissors() {
           printf("  ########                                       \n");
         } else if (strcmp(computerHandString, "PEDRA") == 0){
         //COLOCAR AQUI CODIGO DA PEDRA
+             printf("       ######\n");
+             printf("    ####   ####\n");
+             printf("   ###         ##\n");
+             printf("  ###          ####\n");
+             printf(" ## ###           ##\n");
+             printf(" #   ####          ##\n");
+             printf(" ##    ###         ##\n");
+             printf(" ###    #####   #####\n");
+             printf("  ####     #########\n");
+             printf("    ####      #### \n");
+             printf("       ########\n");
         } else if (strcmp(computerHandString, "PAPEL") == 0){
         //COLOCAR AQUI CODIGO DO PAPEL
         }
