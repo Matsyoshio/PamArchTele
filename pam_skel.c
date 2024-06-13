@@ -96,30 +96,30 @@ int playRockPaperScissors() {
               printf("  ########                                       \n");
         } else if (strcmp(userHandString, "PEDRA") == 0){
             //COLOCAR AQUI CODIGO DA PEDRA
-             printf("       ######\n");
-             printf("    ####   ####\n");
-             printf("   ###         ##\n");
-             printf("  ###          ####\n");
-             printf(" ## ###           ##\n");
-             printf(" #   ####          ##\n");
-             printf(" ##    ###         ##\n");
-             printf(" ###    #####   #####\n");
-             printf("  ####     #########\n");
-             printf("    ####      #### \n");
              printf("       ########\n");
+             printf("    ####      ####\n");
+             printf("   ###            ##\n");
+             printf("  ###             ####\n");
+             printf(" ## ###              ##\n");
+             printf(" #   ####            ##\n");
+             printf(" ##    ###           ##\n");
+             printf(" ###    #####     #####\n");
+             printf("  ####       #########\n");
+             printf("    ####        #### \n");
+             printf("       ##########\n");
              
         } else if (strcmp(userHandString, "PAPEL") == 0){
         //COLOCAR AQUI CODIGO DO PAPEL
 
-            printf("  ##==================##\n");
-            printf("    ]]              ]]\n");
-            printf("     ]]              ]]\n");
-            printf("      ]]             ]]\n");
-            printf("      ]]              ]]\n");
-            printf("     ]]              ]]\n");
-            printf("    ]]              ]]\n");
-            printf("   ]]              ]] \n");
-            printf(" ##==================##\n");
+            printf("    #================#\n");
+            printf("     ]] ---- --- -- ]]\n");
+            printf("     ]] ------ ----  ]]\n");
+            printf("      ]] ----------. ]]\n");
+            printf("      ]] ----. ----- ]]\n");
+            printf("     ]] ---- - ----- ]]\n");
+            printf("    ]] ----- - ---- ]]\n");
+            printf("   ]] -------.  -- ]] \n");
+            printf("   #================#\n");
 
         }
         printf("\n\n-----------------------------------------\n\n");
@@ -141,28 +141,28 @@ int playRockPaperScissors() {
           printf("  ########                                       \n");
         } else if (strcmp(computerHandString, "PEDRA") == 0){
         //COLOCAR AQUI CODIGO DA PEDRA
-             printf("       ######\n");
-             printf("    ####   ####\n");
-             printf("   ###         ##\n");
-             printf("  ###          ####\n");
-             printf(" ## ###           ##\n");
-             printf(" #   ####          ##\n");
-             printf(" ##    ###         ##\n");
-             printf(" ###    #####   #####\n");
-             printf("  ####     #########\n");
-             printf("    ####      #### \n");
              printf("       ########\n");
+             printf("    ####      ####\n");
+             printf("   ###            ##\n");
+             printf("  ###             ####\n");
+             printf(" ## ###              ##\n");
+             printf(" #   ####            ##\n");
+             printf(" ##    ###           ##\n");
+             printf(" ###    #####     #####\n");
+             printf("  ####       #########\n");
+             printf("    ####        #### \n");
+             printf("       ##########\n");
         } else if (strcmp(computerHandString, "PAPEL") == 0){
         //COLOCAR AQUI CODIGO DO PAPEL
-            printf("  ##==================##\n");
-            printf("    ]]              ]]\n");
-            printf("     ]]              ]]\n");
-            printf("      ]]             ]]\n");
-            printf("      ]]              ]]\n");
-            printf("     ]]              ]]\n");
-            printf("    ]]              ]]\n");
-            printf("   ]]              ]] \n");
-            printf(" ##==================##\n");
+            printf("    #================#\n");
+            printf("     ]] ---- --- -- ]]\n");
+            printf("     ]] ------ ----  ]]\n");
+            printf("      ]] ----------. ]]\n");
+            printf("      ]] ----. ----- ]]\n");
+            printf("     ]] ---- - ----- ]]\n");
+            printf("    ]] ----- - ---- ]]\n");
+            printf("   ]] -------.  -- ]] \n");
+            printf("   #================#\n");
         }
 
         result = userHand - computerHand;
