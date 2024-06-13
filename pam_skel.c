@@ -110,6 +110,17 @@ int playRockPaperScissors() {
              
         } else if (strcmp(userHandString, "PAPEL") == 0){
         //COLOCAR AQUI CODIGO DO PAPEL
+
+printf("  ##==================##\n");
+printf("    ]]              ]]\n");
+printf("     ]]              ]]\n");
+printf("      ]]             ]]\n");
+printf("      ]]              ]]\n");
+printf("     ]]              ]]\n");
+printf("    ]]              ]]\n");
+printf("   ]]              ]] \n");
+printf(" ##==================##\n");
+
         }
         printf("\n\n-----------------------------------------\n\n");
         printf("\n\nMao CPU: %s\n\n", computerHandString);
