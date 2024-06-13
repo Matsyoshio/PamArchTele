@@ -128,7 +128,7 @@ int playRockPaperScissors() {
 
         switch(result) {
             case 0:
-                printf("Empatou!!! Mas também não entra\n\n");
+                printf("Empatou!!! Mas tambem nao entra\n\n");
                 return 2; // Empate
             case 1:
                 printf("Ganhou!\n\n");
