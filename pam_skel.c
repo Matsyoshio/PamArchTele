@@ -57,7 +57,7 @@ int playRockPaperScissors() {
         }
 
         /* Game */
-        printTitle("\nPEDRA, PAPEL, TESOURA");      
+        printTitle("PEDRA, PAPEL, TESOURA");      
 
         do {
             printf("\nPedra, papel ou tesoura?: ");
