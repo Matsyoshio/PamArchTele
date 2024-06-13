@@ -95,9 +95,9 @@ int playRockPaperScissors() {
           printf("##        ##                                     \n");
           printf("  ########                                       \n");
         } else if (strcmp(computerHandString, "PEDRA") == 0){
-        COLOCAR AQUI CODIGO DA PEDRA
+        //COLOCAR AQUI CODIGO DA PEDRA
         } else if (strcmp(computerHandString, "PAPEL") == 0){
-        COLOCAR AQUI CODIGO DO PAPEL
+        //COLOCAR AQUI CODIGO DO PAPEL
         }
 
         result = userHand - computerHand;
