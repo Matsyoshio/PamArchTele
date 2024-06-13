@@ -57,7 +57,7 @@ int playRockPaperScissors() {
         }
 
         /* Game */
-        printTitle("PEDRA, PAPEL, TESOURA: Uma roleta russa para entrar");      
+        printTitle("\nPEDRA, PAPEL, TESOURA: Uma roleta russa para entrar\n\n");      
 
         do {
             printf("\nPedra, papel ou tesoura?: ");
@@ -77,8 +77,30 @@ int playRockPaperScissors() {
                 keepAsking = 1;
         } while(keepAsking == 1);
 
-        printf("\n\nSua mão: %s", userHandString);
-        
+        printf("\n\nSua mao: %s\n\n", userHandString);
+
+                if (strcmp(userHandString, "TESOURA") == 0){
+          printf("  ########                               \n");
+          printf("##        ##                                      \n");
+          printf("##        ##                          ##########  \n");
+          printf("##                                ############  \n");
+          printf("  ##########                ############        \n");
+          printf("              ######  ##############            \n");
+          printf("                ##############                  \n");
+          printf("                ##############                  \n");
+          printf("              ######  ##############            \n");
+          printf("  ##########                ############        \n");
+          printf("##                                ############  \n");
+          printf("##        ##                            ########  \n");
+          printf("##        ##                                     \n");
+          printf("  ########                                       \n");
+        } else if (strcmp(userHandString, "PEDRA") == 0){
+        //COLOCAR AQUI CODIGO DA PEDRA
+        } else if (strcmp(userHandString, "PAPEL") == 0){
+        //COLOCAR AQUI CODIGO DO PAPEL
+        }
+        printf("\n\n-----------------------------------------\n\n");
+        printf("\n\nMao CPU: %s\n\n", computerHandString);
         if (strcmp(computerHandString, "TESOURA") == 0){
           printf("  ########                               \n");
           printf("##        ##                                      \n");
