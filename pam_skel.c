@@ -57,7 +57,7 @@ int playRockPaperScissors() {
         }
 
         /* Game */
-        printTitle("\nPEDRA, PAPEL, TESOURA: Uma roleta russa para entrar\n\n");      
+        printTitle("\nPEDRA, PAPEL, TESOURA\n\n");      
 
         do {
             printf("\nPedra, papel ou tesoura?: ");
@@ -79,23 +79,35 @@ int playRockPaperScissors() {
 
         printf("\n\nSua mao: %s\n\n", userHandString);
 
-                if (strcmp(userHandString, "TESOURA") == 0){
-          printf("  ########                               \n");
-          printf("##        ##                                      \n");
-          printf("##        ##                          ##########  \n");
-          printf("##                                ############  \n");
-          printf("  ##########                ############        \n");
-          printf("              ######  ##############            \n");
-          printf("                ##############                  \n");
-          printf("                ##############                  \n");
-          printf("              ######  ##############            \n");
-          printf("  ##########                ############        \n");
-          printf("##                                ############  \n");
-          printf("##        ##                            ########  \n");
-          printf("##        ##                                     \n");
-          printf("  ########                                       \n");
+         if (strcmp(userHandString, "TESOURA") == 0){
+              printf("  ########                               \n");
+              printf("##        ##                                      \n");
+              printf("##        ##                          ##########  \n");
+              printf("##                                ############  \n");
+              printf("  ##########                ############        \n");
+              printf("              ######  ##############            \n");
+              printf("                ##############                  \n");
+              printf("                ##############                  \n");
+              printf("              ######  ##############            \n");
+              printf("  ##########                ############        \n");
+              printf("##                                ############  \n");
+              printf("##        ##                            ########  \n");
+              printf("##        ##                                     \n");
+              printf("  ########                                       \n");
         } else if (strcmp(userHandString, "PEDRA") == 0){
-        //COLOCAR AQUI CODIGO DA PEDRA
+            //COLOCAR AQUI CODIGO DA PEDRA
+             printf("       ######\n");
+             printf("    ####   ####\n");
+             printf("   ###         ##\n");
+             printf("  ###          ####\n");
+             printf(" ## ###           ##\n");
+             printf(" #   ####          ##\n");
+             printf(" ##    ###         ##\n");
+             printf(" ###    #####   #####\n");
+             printf("  ####     #########\n");
+             printf("    ####      #### \n");
+             printf("       ########\n");
+             
         } else if (strcmp(userHandString, "PAPEL") == 0){
         //COLOCAR AQUI CODIGO DO PAPEL
         }
