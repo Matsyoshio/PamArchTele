@@ -44,41 +44,61 @@ int playRockPaperScissors() {
 
         switch(computerHand) {
             case 0:
-                strcpy(computerHandString, "ROCK");
+                strcpy(computerHandString, "PEDRA");
                 break;
             case 1:
-                strcpy(computerHandString, "PAPER");
+                strcpy(computerHandString, "PAPEL");
                 break;
             case 2:
-                strcpy(computerHandString, "SCISSORS");
+                strcpy(computerHandString, "TESOURA");
                 break;
             default:
                 break;
         }
 
         /* Game */
-        printTitle("ROCK, PAPER, SCISSORS BY ZABE");      
+        printTitle("PEDRA, PAPEL, TESOURA: Uma roleta russa para entrar");      
 
         do {
-            printf("\nRock, paper or scissors?: ");
+            printf("\nPedra, papel ou tesoura?: ");
 
             scanf("%s", userHandString);
             stringToCaps(userHandString);
 
             keepAsking = 0;
 
-            if(strcmp(userHandString, "ROCK") == 0)
+            if(strcmp(userHandString, "PEDRA") == 0)
                 userHand = 0;
-            else if(strcmp(userHandString, "PAPER") == 0)
+            else if(strcmp(userHandString, "PAPEL") == 0)
                 userHand = 1;
-            else if(strcmp(userHandString, "SCISSORS") == 0)
+            else if(strcmp(userHandString, "TESOURA") == 0)
                 userHand = 2;
             else
                 keepAsking = 1;
         } while(keepAsking == 1);
 
-        printf("\n\nYour hand: %s", userHandString);
-        printf("\nComputer's hand: %s\n\n", computerHandString);
+        printf("\n\nSua mão: %s", userHandString);
+        
+        if (strcmp(computerHandString, "TESOURA") == 0){
+          printf("  ########                               \n");
+          printf("##        ##                                      \n");
+          printf("##        ##                          ##########  \n");
+          printf("##                                ############  \n");
+          printf("  ##########                ############        \n");
+          printf("              ######  ##############            \n");
+          printf("                ##############                  \n");
+          printf("                ##############                  \n");
+          printf("              ######  ##############            \n");
+          printf("  ##########                ############        \n");
+          printf("##                                ############  \n");
+          printf("##        ##                            ########  \n");
+          printf("##        ##                                     \n");
+          printf("  ########                                       \n");
+        } else if (strcmp(computerHandString, "PEDRA") == 0){
+        COLOCAR AQUI CODIGO DA PEDRA
+        } else if (strcmp(computerHandString, "PAPEL") == 0){
+        COLOCAR AQUI CODIGO DO PAPEL
+        }
 
         result = userHand - computerHand;
         if(result < 0)
@@ -86,13 +106,13 @@ int playRockPaperScissors() {
 
         switch(result) {
             case 0:
-                printf("It's a draw, gg\n\n");
+                printf("Empatou!!! Mas também não entra\n\n");
                 return 2; // Empate
             case 1:
-                printf("YOU WON YAY!\n\n");
+                printf("Ganhou!\n\n");
                 return 1; // Vitória
             case 2:
-                printf("Oh, you lost. GG EZ NOOB\n\n");
+                printf("Perdeu, vai ter que fazer de novo!!\n\n");
                 return 0; // Derrota
             default:
                 break;
@@ -155,7 +175,7 @@ int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, const char **ar
     // Se houver empate ou derrota, incremente o tempo de penalidade
     if (result == 0 || result == 2) {
         *penaltyTime += 3; // Adiciona 3 segundos a cada falha
-        printf("You have been penalized for %d seconds.\n", *penaltyTime);
+        printf("Crashow por %d segundos.\n", *penaltyTime);
         sleep(*penaltyTime); // Bloqueia o sistema pelo tempo de penalidade
 
         // Salva o tempo de penalidade na sessão PAM
