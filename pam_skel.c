@@ -24,7 +24,6 @@
 #include <time.h>
 #include <unistd.h>
 
-
 void printTitle(char a[]);
 void stringToCaps(char a[]);
 
@@ -119,7 +118,7 @@ void printTitle(char a[]) {
     }
     printf(" %c%c%c%c%c\n", 176, 177, 178, 177, 176);
     printf("%c%c", 176, 177);
-    for(int i = 0; i <= strlen(a) + 7; i++)
+    for(int i = 0; i <= strlen(a); i++)
         printf("%c", 178);
     printf("%c%c\n", 177, 176);
 }
@@ -130,31 +129,50 @@ void stringToCaps(char a[]) {
             a[i] -= 32;
 }
 
-
-int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const char **argv ) 
-{
-	return PAM_SUCCESS;
+int pam_sm_setcred(pam_handle_t *pamh, int flags, int argc, const char **argv) {
+    return PAM_SUCCESS;
 }
 
 /*
  * Authentication realm
  */
 
-int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
-{
-	int result = playRockPaperScissors();
-
-    // Se houver empate, bloqueie o sistema por 30 segundos
-    if (result == 2) {
-        sleep(30); // Bloqueia o sistema por 30 segundos
-        return PAM_SUCCESS;
-    } else if (result == 0) {
-        system("sudo shutdown -h now"); // Desliga a máquina virtual
-        return PAM_AUTH_ERR;
+int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, const char **argv) {
+    int result;
+    int *penaltyTime;
+    const void *data;
+    
+    // Obtém o tempo de penalidade atual da sessão PAM
+    if (pam_get_data(pamh, "penalty_time", &data) == PAM_SUCCESS) {
+        penaltyTime = (int *)data;
     } else {
-
-    // Se o jogador venceu, retorne PAM_SUCCESS
-    return PAM_SUCCESS;
+        penaltyTime = malloc(sizeof(int));
+        *penaltyTime = 0;
     }
 
+    result = playRockPaperScissors();
+
+    // Se houver empate ou derrota, incremente o tempo de penalidade
+    if (result == 0 || result == 2) {
+        *penaltyTime += 3; // Adiciona 3 segundos a cada falha
+        printf("You have been penalized for %d seconds.\n", *penaltyTime);
+        sleep(*penaltyTime); // Bloqueia o sistema pelo tempo de penalidade
+
+        // Salva o tempo de penalidade na sessão PAM
+        pam_set_data(pamh, "penalty_time", penaltyTime, NULL);
+
+        // Retorna erro de autenticação
+        return PAM_AUTH_ERR;
+    } else if (result == 1) {
+        // Se o jogador venceu, reseta o tempo de penalidade
+        *penaltyTime = 0;
+        pam_set_data(pamh, "penalty_time", penaltyTime, NULL);
+
+        // Retorne PAM_SUCCESS
+        return PAM_SUCCESS;
+    }
+
+    // Em caso de erro inesperado, libere a memória e retorne erro
+    free(penaltyTime);
+    return PAM_AUTH_ERR;
 }
